@@ -14,7 +14,7 @@ app.filter('propsFilter', function() {
 
     if (angular.isArray(items)) {
       var keys = Object.keys(props);
-        
+
       items.forEach(function(item) {
         var itemMatches = false;
 
@@ -62,12 +62,23 @@ app.controller('DemoCtrl', function ($scope, $http, $timeout, $interval) {
     vm.searchEnabled = true;
   };
 
+  vm.enableRequired = function() {
+    vm.required = true;
+  };
+
+  vm.disableRequired = function() {
+    vm.required = false;
+  };
+
   vm.disableSearch = function() {
     vm.searchEnabled = false;
   };
 
   vm.clear = function() {
     vm.person.selected = undefined;
+    vm.person.selected2 = undefined;
+    vm.person.selected3 = undefined;
+    vm.person.submitted = undefined;
     vm.address.selected = undefined;
     vm.country.selected = undefined;
   };
@@ -213,7 +224,11 @@ app.controller('DemoCtrl', function ($scope, $http, $timeout, $interval) {
       delete item.isTag;
       vm.people.push(item);
     }
-  }
+  };
+
+  vm.clearSubmited = function($item) {
+    if (!$item) { vm.person.submitted = undefined }
+  };
 
   vm.country = {};
   vm.countries = [ // Taken from https://gist.github.com/unceus/6501985

@@ -11,6 +11,7 @@
            ng-model="$select.search"
            ng-hide="!$select.isEmpty() && !$select.open"
            ng-disabled="$select.disabled"
+           ng-required="$select.isEmpty() && $select.required"
            aria-label="{{ $select.baseTitle }}">
   </div>
   <div class="ui-select-choices"></div>

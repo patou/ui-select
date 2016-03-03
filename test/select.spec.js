@@ -206,6 +206,12 @@ describe('ui-select tests', function() {
     e.keyCode = keyCode;
     element.trigger(e);
   }
+  function triggerKeyup(element, keyCode) {
+    var e = jQuery.Event("keyup");
+    e.which = keyCode;
+    e.keyCode = keyCode;
+    element.trigger(e);
+  }
   function triggerPaste(element, text, isClipboardEvent) {
     var e = jQuery.Event("paste");
     if (isClipboardEvent) {
@@ -606,6 +612,17 @@ describe('ui-select tests', function() {
     expect(el3.scope().$select.disabled).toBeFalsy();
     clickMatch(el3);
     expect(isDropdownOpened(el3)).toEqual(true);
+  });
+
+  it('should be required if the attribute says so', function() {
+    var el1 = createUiSelect({required: true});
+    expect(el1.scope().$select.required).toEqual(true);
+
+    var el2 = createUiSelect({required: false});
+    expect(el2.scope().$select.required).toEqual(false);
+
+    var el3 = createUiSelect();
+    expect(el3.scope().$select.required).toBeFalsy();
   });
 
   it('should allow decline tags when tagging function returns null', function() {

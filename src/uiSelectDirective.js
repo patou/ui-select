@@ -98,6 +98,11 @@ uis.directive('uiSelect',
           $select.disabled = attrs.disabled !== undefined ? attrs.disabled : false;
         });
 
+        attrs.$observe('required', function() {
+          // No need to use $eval() (thanks to ng-disabled) since we already get a boolean instead of a string
+          $select.required = attrs.required !== undefined ? attrs.required : false;
+        });
+
         attrs.$observe('resetSearchInput', function() {
           // $eval() is needed otherwise we get a string instead of a boolean
           var resetSearchInput = scope.$eval(attrs.resetSearchInput);

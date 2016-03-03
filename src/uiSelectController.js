@@ -460,6 +460,8 @@ uis.controller('uiSelectCtrl',
   };
 
   ctrl.clear = function($event) {
+    if (ctrl.disabled)
+        return;
     ctrl.select(undefined);
     $event.stopPropagation();
     $timeout(function() {

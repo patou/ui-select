@@ -1,5 +1,13 @@
 # AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.svg?branch=master)](https://travis-ci.org/angular-ui/ui-select) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/ui-select?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Fork from : https://github.com/angular-ui/ui-select
+
+## Add and correction :
+
+- Correction Tagging with simple select
+- If the select is disabled the button must not work (was corrected in the lib)
+- Add required html5 option (use an input to display the placeholder that allow to add required attribute and block the submit of the form with a message asking to select a value)
+
 AngularJS-native version of [Select2](http://ivaynberg.github.io/select2/) and [Selectize](http://brianreavis.github.io/selectize.js/). [http://angular-ui.github.io/ui-select/](http://angular-ui.github.io/ui-select/)
 
 [Getting Started](https://github.com/angular-ui/ui-select/wiki/Getting-Started) 

@@ -2551,7 +2551,7 @@ describe('ui-select tests', function() {
       showChoicesForSearch(el, 'a');
       expect(el.find('.ui-select-choices-row-inner').size()).toBe(9);
 
-      expect(scope.slowTaggingFunc.calls.count()).toBe(2);
+      expect(scope.slowTaggingFunc.calls.count()).toBe(4);
       expect(scope.slowTaggingFunc.calls.count()).not.toBe(15);
     });
 
